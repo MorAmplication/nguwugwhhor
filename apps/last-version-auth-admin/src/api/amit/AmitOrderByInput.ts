@@ -4,4 +4,6 @@ export type AmitOrderByInput = {
   id?: SortOrder;
   createdAt?: SortOrder;
   updatedAt?: SortOrder;
+  userName?: SortOrder;
+  password?: SortOrder;
 };

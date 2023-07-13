@@ -1,1 +1,4 @@
-export type AmitUpdateInput = {};
+export type AmitUpdateInput = {
+  userName?: string | null;
+  password?: string | null;
+};

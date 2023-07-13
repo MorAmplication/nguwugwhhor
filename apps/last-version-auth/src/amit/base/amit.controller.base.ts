@@ -53,6 +53,7 @@ export class AmitControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
+        userName: true,
       },
     });
   }
@@ -77,6 +78,7 @@ export class AmitControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
+        userName: true,
       },
     });
   }
@@ -102,6 +104,7 @@ export class AmitControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
+        userName: true,
       },
     });
     if (result === null) {
@@ -136,6 +139,7 @@ export class AmitControllerBase {
           id: true,
           createdAt: true,
           updatedAt: true,
+          userName: true,
         },
       });
     } catch (error) {
@@ -169,6 +173,7 @@ export class AmitControllerBase {
           id: true,
           createdAt: true,
           updatedAt: true,
+          userName: true,
         },
       });
     } catch (error) {
