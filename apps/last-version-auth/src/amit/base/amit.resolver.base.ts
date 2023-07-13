@@ -18,6 +18,9 @@ import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { GqlDefaultAuthGuard } from "../../auth/gqlDefaultAuth.guard";
 import * as common from "@nestjs/common";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
+import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
+import { CreateAmitArgs } from "./CreateAmitArgs";
+import { UpdateAmitArgs } from "./UpdateAmitArgs";
 import { DeleteAmitArgs } from "./DeleteAmitArgs";
 import { AmitCountArgs } from "./AmitCountArgs";
 import { AmitFindManyArgs } from "./AmitFindManyArgs";
@@ -71,6 +74,43 @@ export class AmitResolverBase {
       return null;
     }
     return result;
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Amit)
+  @nestAccessControl.UseRoles({
+    resource: "Amit",
+    action: "create",
+    possession: "any",
+  })
+  async createAmit(@graphql.Args() args: CreateAmitArgs): Promise<Amit> {
+    return await this.service.create({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Amit)
+  @nestAccessControl.UseRoles({
+    resource: "Amit",
+    action: "update",
+    possession: "any",
+  })
+  async updateAmit(@graphql.Args() args: UpdateAmitArgs): Promise<Amit | null> {
+    try {
+      return await this.service.update({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new apollo.ApolloError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => Amit)

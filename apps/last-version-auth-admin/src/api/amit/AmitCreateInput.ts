@@ -1,1 +1,4 @@
-export type AmitCreateInput = {};
+export type AmitCreateInput = {
+  userName?: string | null;
+  password?: string | null;
+};
