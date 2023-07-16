@@ -24,6 +24,7 @@ const CREATE_INPUT = {
   updatedAt: new Date(),
   userName: "exampleUserName",
   password: "examplePassword",
+  username: "exampleUsername",
 };
 const CREATE_RESULT = {
   id: "exampleId",
@@ -31,6 +32,7 @@ const CREATE_RESULT = {
   updatedAt: new Date(),
   userName: "exampleUserName",
   password: "examplePassword",
+  username: "exampleUsername",
 };
 const FIND_MANY_RESULT = [
   {
@@ -39,6 +41,7 @@ const FIND_MANY_RESULT = [
     updatedAt: new Date(),
     userName: "exampleUserName",
     password: "examplePassword",
+    username: "exampleUsername",
   },
 ];
 const FIND_ONE_RESULT = {
@@ -47,6 +50,7 @@ const FIND_ONE_RESULT = {
   updatedAt: new Date(),
   userName: "exampleUserName",
   password: "examplePassword",
+  username: "exampleUsername",
 };
 
 const service = {
