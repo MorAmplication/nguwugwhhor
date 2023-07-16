@@ -1,4 +1,5 @@
-import { Module } from "@nestjs/common";
+import { Module, forwardRef } from "@nestjs/common";
+import { AuthModule } from "../../auth/auth.module";
 import { YuvalModuleBase } from "./base/yuval.module.base";
 import { YuvalService } from "./yuval.service";
 import { YuvalController } from "./yuval.controller";
