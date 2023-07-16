@@ -36,6 +36,14 @@ class AmitCreateInput {
     nullable: true,
   })
   password?: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  username!: string;
 }
 
 export { AmitCreateInput as AmitCreateInput };
