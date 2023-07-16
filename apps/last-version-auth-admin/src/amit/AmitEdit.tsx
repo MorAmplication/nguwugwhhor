@@ -13,6 +13,7 @@ export const AmitEdit = (props: EditProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="UserName" source="userName" />
         <PasswordInput label="Password" source="password" />
+        <TextInput label="Username" source="username" />
       </SimpleForm>
     </Edit>
   );
