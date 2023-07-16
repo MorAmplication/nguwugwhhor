@@ -13,6 +13,7 @@ export const AmitCreate = (props: CreateProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="UserName" source="userName" />
         <PasswordInput label="Password" source="password" />
+        <TextInput label="Username" source="username" />
       </SimpleForm>
     </Create>
   );
