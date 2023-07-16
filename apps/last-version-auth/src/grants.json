@@ -62,12 +62,6 @@
   {
     "role": "user",
     "resource": "Amit",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Amit",
     "action": "create:any",
     "attributes": "*"
   },
@@ -75,6 +69,12 @@
     "role": "user",
     "resource": "Amit",
     "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Amit",
+    "action": "read:own",
     "attributes": "*"
   },
   {
