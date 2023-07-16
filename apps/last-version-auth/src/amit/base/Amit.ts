@@ -50,6 +50,14 @@ class Amit {
     nullable: true,
   })
   userName!: string | null;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  username!: string;
 }
 
 export { Amit as Amit };
