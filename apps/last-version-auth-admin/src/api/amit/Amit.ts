@@ -3,4 +3,5 @@ export type Amit = {
   createdAt: Date;
   updatedAt: Date;
   userName: string | null;
+  username: string;
 };
