@@ -2,22 +2,22 @@ import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { Credentials } from "./Credentials";
 import { PasswordService } from "./password.service";
 import { TokenService } from "./token.service";
-import { MorInfo } from "./MorInfo";
-import { MorService } from "../mor/mor.service";
+import { UserInfo } from "./UserInfo";
+import { UserService } from "../user/user.service";
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly passwordService: PasswordService,
     private readonly tokenService: TokenService,
-    private readonly morService: MorService
+    private readonly userService: UserService
   ) {}
 
   async validateUser(
     username: string,
     password: string
-  ): Promise<MorInfo | null> {
-    const user = await this.morService.findOne({
+  ): Promise<UserInfo | null> {
+    const user = await this.userService.findOne({
       where: { username },
     });
     if (user && (await this.passwordService.compare(password, user.password))) {
@@ -27,7 +27,7 @@ export class AuthService {
     }
     return null;
   }
-  async login(credentials: Credentials): Promise<MorInfo> {
+  async login(credentials: Credentials): Promise<UserInfo> {
     const { username, password } = credentials;
     const user = await this.validateUser(
       credentials.username,
