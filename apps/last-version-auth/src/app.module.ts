@@ -2,9 +2,6 @@ import { Module, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
-import { MorModule } from "./mor/mor.module";
-import { AmitModule } from "./amit/amit.module";
-import { YuvalModule } from "./yuval/yuval.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -22,9 +19,6 @@ import { AuthModule } from "./auth/auth.module";
     ACLModule,
     AuthModule,
     UserModule,
-    MorModule,
-    AmitModule,
-    YuvalModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
